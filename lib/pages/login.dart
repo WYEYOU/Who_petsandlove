@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:who_petandlove/pages/register.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -103,6 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Color.fromARGB(255, 66, 39, 4),
                                   width: 2),
                             ),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
                           ),
                         ),
                       ),
@@ -153,6 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Color.fromARGB(255, 66, 39, 4),
                                   width: 1),
                             ),
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _isObscured
@@ -236,7 +241,13 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 15),
                       Center(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const RegisterPage()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                               backgroundColor:
                                   const Color.fromARGB(255, 112, 79, 39),
