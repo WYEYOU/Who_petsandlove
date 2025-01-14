@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 25, right: 25),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
@@ -106,7 +106,8 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Color.fromARGB(255, 66, 39, 4),
                                   width: 2),
                             ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 12.0),
                           ),
                         ),
                       ),
@@ -157,7 +158,8 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Color.fromARGB(255, 66, 39, 4),
                                   width: 1),
                             ),
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 12.0),
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _isObscured
@@ -264,6 +266,51 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "หรือ",
+                        style: GoogleFonts.kanit(
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                            color: const Color.fromARGB(255, 66, 39, 4)),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 255, 255, 255),
+                            minimumSize: const Size(400, 48),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(19),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/GG.png',
+                                height: 24,
+                                width: 24,
+                              ),
+                              const SizedBox(width: 10),
+                              Text(
+                                "ดำเนินการต่อด้วย Google",
+                                style: GoogleFonts.kanit(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color.fromARGB(255, 66, 39, 4),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 )
