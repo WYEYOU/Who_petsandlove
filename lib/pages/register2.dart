@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:who_petandlove/pages/login.dart';
-import 'package:who_petandlove/pages/register2.dart';
+import 'package:who_petandlove/pages/register.dart';
+import 'package:who_petandlove/pages/register3.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class Register2Page extends StatefulWidget {
+  const Register2Page({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<Register2Page> createState() => _Register2PageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _Register2PageState extends State<Register2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +71,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             height: 10,
                             width: 85,
                             decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 153, 106, 86),
+                                color: Colors.brown,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(50))),
                           ),
@@ -100,7 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 8, top: 10),
                             child: Text(
-                              "ชื่อ - นามสกุล",
+                              "Facebook",
                               style: GoogleFonts.kanit(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -120,7 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 const Color(0xFF695146), // สีของข้อความที่ป้อน
                           ),
                           decoration: InputDecoration(
-                            hintText: "เช่น Who Petsandlove",
+                            hintText: "กรอกชื่อ facebook",
                             hintStyle: GoogleFonts.kanit(
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -150,7 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 8, top: 10),
                             child: Text(
-                              "อีเมล",
+                              "Instagram",
                               style: GoogleFonts.kanit(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -170,7 +170,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 const Color(0xFF695146), // สีของข้อความที่ป้อน
                           ),
                           decoration: InputDecoration(
-                            hintText: "เช่น whopetsandlove@gmail.com",
+                            hintText: "กรอกชื่อ instagram",
                             hintStyle: GoogleFonts.kanit(
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -200,7 +200,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 8, top: 10),
                             child: Text(
-                              "เบอร์โทร",
+                              "Line ID",
                               style: GoogleFonts.kanit(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -220,7 +220,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 const Color(0xFF695146), // สีของข้อความที่ป้อน
                           ),
                           decoration: InputDecoration(
-                            hintText: "เช่น 0998887766",
+                            hintText: "กรอก Line id",
                             hintStyle: GoogleFonts.kanit(
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -280,7 +280,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const LoginPage()),
+                                  builder: (context) => const RegisterPage()),
                             );
                   },
                   style: ElevatedButton.styleFrom(
@@ -290,7 +290,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(50),
                       )),
                   child: Text(
-                    "ยกเลิก",
+                    "ย้อนกลับ",
                     style: GoogleFonts.kanit(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -305,7 +305,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Register2Page()),
+                                  builder: (context) => const Register3Page()),
                             );
                   },
                   style: ElevatedButton.styleFrom(

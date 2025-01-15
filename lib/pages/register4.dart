@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:who_petandlove/pages/login.dart';
-import 'package:who_petandlove/pages/register2.dart';
+import 'package:who_petandlove/pages/register3.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class Register4Page extends StatefulWidget {
+  const Register4Page({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<Register4Page> createState() => _Register4PageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _Register4PageState extends State<Register4Page> {
+  bool _isObscured = true;
+  bool _isObscured2 = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +72,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             height: 10,
                             width: 85,
                             decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 153, 106, 86),
+                                color: Colors.brown,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(50))),
                           ),
@@ -79,7 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             height: 10,
                             width: 85,
                             decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 153, 106, 86),
+                                color: Colors.brown,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(50))),
                           ),
@@ -87,7 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             height: 10,
                             width: 85,
                             decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 153, 106, 86),
+                                color: Colors.brown,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(50))),
                           ),
@@ -100,7 +101,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 8, top: 10),
                             child: Text(
-                              "ชื่อ - นามสกุล",
+                              "รหัสผ่าน",
                               style: GoogleFonts.kanit(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -109,7 +110,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           )
                         ],
                       ),
-                      SizedBox(
+                       SizedBox(
                         width: 400,
                         height: 50,
                         child: TextField(
@@ -119,8 +120,9 @@ class _RegisterPageState extends State<RegisterPage> {
                             color:
                                 const Color(0xFF695146), // สีของข้อความที่ป้อน
                           ),
+                          obscureText: _isObscured,
                           decoration: InputDecoration(
-                            hintText: "เช่น Who Petsandlove",
+                            hintText: "เช่น Who112233",
                             hintStyle: GoogleFonts.kanit(
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -137,10 +139,23 @@ class _RegisterPageState extends State<RegisterPage> {
                               borderRadius: BorderRadius.circular(50),
                               borderSide: const BorderSide(
                                   color: Color.fromARGB(255, 66, 39, 4),
-                                  width: 2),
+                                  width: 1),
                             ),
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 20.0, vertical: 12.0),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isObscured
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: const Color(0xFF695146),
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscured = !_isObscured;
+                                });
+                              },
+                            ),
                           ),
                         ),
                       ),
@@ -150,7 +165,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             padding: const EdgeInsets.only(
                                 left: 15, bottom: 8, top: 10),
                             child: Text(
-                              "อีเมล",
+                              "ยืนยันรหัสผ่าน",
                               style: GoogleFonts.kanit(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -169,8 +184,9 @@ class _RegisterPageState extends State<RegisterPage> {
                             color:
                                 const Color(0xFF695146), // สีของข้อความที่ป้อน
                           ),
+                          obscureText: _isObscured2,
                           decoration: InputDecoration(
-                            hintText: "เช่น whopetsandlove@gmail.com",
+                            hintText: "เช่น Who112233",
                             hintStyle: GoogleFonts.kanit(
                                 fontSize: 14,
                                 fontWeight: FontWeight.normal,
@@ -187,60 +203,23 @@ class _RegisterPageState extends State<RegisterPage> {
                               borderRadius: BorderRadius.circular(50),
                               borderSide: const BorderSide(
                                   color: Color.fromARGB(255, 66, 39, 4),
-                                  width: 2),
+                                  width: 1),
                             ),
                             contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 20.0, vertical: 12.0),
-                          ),
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 15, bottom: 8, top: 10),
-                            child: Text(
-                              "เบอร์โทร",
-                              style: GoogleFonts.kanit(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: const Color(0xFF695146)),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        width: 400,
-                        height: 50,
-                        child: TextField(
-                          style: GoogleFonts.kanit(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                            color:
-                                const Color(0xFF695146), // สีของข้อความที่ป้อน
-                          ),
-                          decoration: InputDecoration(
-                            hintText: "เช่น 0998887766",
-                            hintStyle: GoogleFonts.kanit(
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                                color: const Color.fromARGB(135, 153, 106, 86)),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              borderSide: const BorderSide(
-                                color: Color.fromARGB(
-                                    255, 153, 106, 86), // สีขอบปกติ
-                                width: 1.5, // ความหนาขอบปกติ
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isObscured2
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: const Color(0xFF695146),
                               ),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscured2 = !_isObscured2;
+                                });
+                              },
                             ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              borderSide: const BorderSide(
-                                  color: Color.fromARGB(255, 66, 39, 4),
-                                  width: 2),
-                            ),
-                            contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 12.0),
                           ),
                         ),
                       ),
@@ -280,7 +259,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const LoginPage()),
+                                  builder: (context) => const Register3Page()),
                             );
                   },
                   style: ElevatedButton.styleFrom(
@@ -290,7 +269,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(50),
                       )),
                   child: Text(
-                    "ยกเลิก",
+                    "ย้อนกลับ",
                     style: GoogleFonts.kanit(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -301,13 +280,7 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 width: 170,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Register2Page()),
-                            );
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 66, 39, 4),
                       minimumSize: const Size(400, 48),
@@ -315,7 +288,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         borderRadius: BorderRadius.circular(50),
                       )),
                   child: Text(
-                    "ถัดไป",
+                    "ยืนยัน",
                     style: GoogleFonts.kanit(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
